@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <header>
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                    <a class="navbar-brand" href="/">
+                                            <h2><i class="code icon"></i> Blog App</h2> 
+                                        </a>
+                            </div>
+                    
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                  </button>
+                                  <div class="collapse navbar-collapse"></div>
+                                  <div class="collapse navbar-collapse"></div>
+                                  <div class="collapse navbar-collapse"></div>
+                                  <div class="collapse navbar-collapse mr-4"></div><div class="collapse navbar-collapse"></div>
+                                  <div class="collapse navbar-collapse mr-4"></div>
+                                  <div class="collapse navbar-collapse mr-4"></div><div class="collapse navbar-collapse"></div>
+                                  <div class="collapse navbar-collapse mr-4"></div><div class="collapse navbar-collapse"></div><div class="collapse navbar-collapse"></div><div class="collapse navbar-collapse"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+                                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav mr-4">
+                                                <% if(user){ %>
+                                                        <li class="nav-item"><a href="/blogs/new" class="nav-link">Create a blog</a></li>
+                                                        <li class="nav-item"><a href="/logout" class="nav-link">Log-Out</a></li>
+                                                        <a href="/profile" class="profile-link"><i class="fas fa-user-circle fa-3x"></i></a>
+                                               <% } %>
+                                               <% if(!user){ %>
+                                                <li class="nav-item"><a href="/login" class="nav-link">Log In</a></li>
+                                                <li class="nav-item"><a href="/register" class="nav-link">Sign-Up/Register</a></li>
+                                              <% } %>                                
+                                        </ul>
+                                  </div>
+                                                  
+                            </div>
+                        </div>
+                    </nav>
+        </header>
+
+
+<div class="container">
+    <!-- the carousel         -->
+<div class="galleryContainer">
+    <div class="slideShowContainer float-left">
+        <% blogs.forEach(blog => { %>
+            <div class="imageHolder">
+                <img src="<%= blog.image %>" alt="">
+
+            </div>
+        <% }) %>        
+</div>
+<div class="sidenote animated fadeIn">
+    <% blogs.forEach(blog => { %>
+     <div class="captionText">
+            <h1 class="Title"> <%= blog.title %> </h1>
+            <p class="lead-tex"><%- blog.body.substr(0,200) %> ...</p>
+            <a href="/blogs/<%= blog._id %>" class="linky float-right">
+                <i class="fas fa-arrow-right"></i> Read More
+            </a>
+     </div>       
+    <% }) %>
+</div>
+
+
+</div>
+
+
+
+
+        <i class="slide fas fa-angle-left fa-3x float-left left" onclick="plusSlides(-1)" id="left"></i>
+        <i class="slide fas fa-angle-right fa-3x float-right right" id="right" onclick="plusSlides(1)"></i>       
+
+    <div class="row second-tier">
+        <% blogs.forEach(blog => { %>
+            <div class="col-xl-4 col-lg-4">
+                    <img src="<%= blog.image %>" class="crew" alt="">
+                    <a href="/blogs/<%= blog._id %>" class="crew-link"  >
+                        <div class="letterhead">
+                                <h1><%- blog.title %></h1>
+                                <hr>
+                                <p class="sub"><%- blog.body.substr(0, 150) %> ... </p>
+                                <div class="numLikes">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span><img src="/img/like (4).png" alt="">  36 likes</span>
+                                </div>
+                                
+                        </div>
+                    </a>
+                </div>
+        <% }) %>
+        
+    
+</div>        
+         
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/js/indes.js"></script>           
+</body>
+</html>
+
+

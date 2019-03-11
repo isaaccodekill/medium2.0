@@ -1,0 +1,36 @@
+<% include partials/header %>
+
+
+
+
+        <% blogs.forEach(blog => { %>
+                    <div class="blog-post animated fadeIn">
+                            <img  class="lead" src="<%= blog.image %>" alt="">
+                            <div class="heading">
+                                    <h1 class="ui header"><a href="#"><%- blog.title %></a></h1>
+                            </div>
+                            <div class="identity">
+                                <div class="sub-image">
+                                        <img  src="https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces">
+                                </div>
+                                <div class="sub"><p><%= blog.author.username %> </p><p><%= blog.createdAtWords %></p></div> 
+                            </div>
+                            <div class="post-body">
+                                    <p class="substr"><%- blog.body.substr(0, 300) %> ....</p>
+                            </div> 
+                            <div class="linky">
+                                   <button><a href="/blogs/<%= blog._id %>" class="read"><i class="arrow right icon"></i>read more</a></button>  
+                            </div>          
+                    </div>
+                    
+                    
+
+    
+<% }) %>     
+
+
+
+
+<% include partials/footer %>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Document</title>
+</head>
+<body>
+        <h2 class="lead"><i class="code icon"></i></h2>
+        <div class="linko float-right" onclick="goBack()">
+                <i class="fas fa-times fa-2x"></i>
+        </div> 
+    <div class="container">
+            <h3 class="lead"> Log into BlogApp </h3>
+            <form action="/login" method="POST">
+                <input class="input-field" type="text" name="username" placeholder="username">
+                <input class="input-field" type="password" name="password"  placeholder="password">
+                <button type="submit">Submit</button>
+            </form>
+        
+        <a href="/register" class="linky">Create An Account</a>    
+        <a href="/login/twiiter" class="linky">Log in with Twitter</a>
+        <a href="/recover" class="linky">Recover password</a>
+        
+</div>
+<script src="/js/auth.js"></script>
+</body>
+</html>
+
+
+<!-- add twitter auth  -->
+<!-- redesign register page -->

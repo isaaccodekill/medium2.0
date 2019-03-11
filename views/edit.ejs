@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+
+ 
+        
+    <div class="formy">
+            <div class="ui main text container segment animated fadeIn">
+                    <div class="ui huge header">
+                        Edit Blog
+                    </div>
+                    <form class="ui form" method="POST" action="/blogs/<%= blog._id %>?_method=PUT">
+                        <div class="field">
+                          <label>Title</label>
+                          <input type="text" name="title" value="<%= blog.title %>" placeholder="Blog title">
+                          <label>Image Url</label>
+                          <input type="text" name="image" value="<%= blog.image %>"  placeholder="Image Url">
+                        </div>
+                        <div class="field">
+                                <label>Blog Content</label>
+                                <textarea name="body"><%- blog.body %></textarea>
+                              </div>
+                        <button class="large ui inverted green button" type="submit">Update</button>
+                      </form> 
+            
+            
+            </div>            
+    </div>
+
+
+
+
+<% include partials/footer %>

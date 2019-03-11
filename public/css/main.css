@@ -1,0 +1,389 @@
+body {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Slabo 27px', serif;
+    height: 100vh;
+    text-decoration: none;
+    overflow-x: hidden;
+    text-align: center;
+}
+div.ui.comments .comment .author{
+    color: inherit;
+}
+form.commentse{
+    display: none;
+    transition: 0.1s all ease-in-out;
+}
+textarea{
+    border: 2px solid #272727;
+}
+nav{
+    padding: 20px;
+}
+button.delbutt{
+    border: none;
+    background: transparent;
+    color: inherit;
+}
+button.delbutt:focus{
+    outline: 0 !important;
+}
+
+
+div.navbar-header{
+    text-align: center;
+}
+nav h2{
+    padding: 7px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+img{
+    text-align: center;
+    width: 75%;
+    height: 50vh;
+    margin: auto;
+    margin-bottom: 50px;
+    object-fit: fill;
+}
+
+div.segment{
+    width: 80%;
+    /* max-width: 800px; */
+    text-align: center;
+}
+li.nav-item{
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+}
+a.profile-link{
+    color: #123456;
+    text-decoration: none;
+}
+a.nav-link{
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* 
+i.icon{
+    font-size: 3rem;
+    margin-left: 2rem;
+    margin-left: 2rem;
+} */
+
+header{
+    margin-bottom: 2rem;
+}
+.field{
+    text-align: left;
+}
+
+.container{
+    margin: auto;
+    padding:  3rem;
+    width: 100%;   
+}
+
+.blog-post{
+    border-radius: 10px;
+    display: inline-block;
+    width: 900px;
+    box-shadow: 0 2px 30px 0 rgba(68, 68, 68, .5);
+    margin: auto;
+    margin-bottom: 5em;
+    font-size: 20px;
+}
+.post-body p{
+    padding: 15px;
+}
+
+img.lead{
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+.identity{
+    padding: 1rem;
+}
+.identity .sub-image{
+    display: block;
+    display: block;
+    float: left;
+    height: 80px;
+    width: 80px;
+    margin-top: 20px;
+}
+
+.identity .sub{
+    display: block;
+    float: left;
+    padding-top: 15px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.identity .sub p{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.texti{
+    border : none;
+    border-bottom: 1px dotted #272727;
+}
+
+.post-body{
+    display: inline;
+}
+.heading{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+.heading h1 a{
+    text-decoration: none;
+    color: inherit;
+}
+.linky{
+    width: 100%;
+    float: left;
+
+}
+.identity .sub-image img{
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.linky button{
+    float: right;
+    padding: 3px;
+    margin: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #17A2B8;
+    border: none;
+    padding: 7px;
+    font-size: 12px;
+    border-radius: 5px;
+    transition: all 0.4s ease-in-out;
+
+}
+.linky button:hover{
+    background-color: #007BFF;
+    transform: scale(1.05);
+}
+.linky a.read{
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+}
+
+.linky a i{
+    font-size: 12px;
+    margin: 0;
+}
+.formy{
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.head-tag{
+    padding: 0.5rem;
+}
+.identity{
+    display: inline-block;
+    width: 100%;
+    font-size: 15px;
+    padding: 20px;
+}
+.blog-title{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    margin: auto;
+    line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 400px;
+    margin-bottom: 50px;
+}
+
+.post-open{
+    padding: 1rem;
+    margin: auto;
+}
+.image-head{
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+}
+.image-head img{
+    width: 100%;
+    object-fit: cover;
+    height: 50vh;
+    border-radius: 5px;
+}
+.blog-body{
+    display: inline-block;
+    padding: 1rem;
+    font-size: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-rendering: optimizeSpeed;
+    text-size-adjust: 100%;
+    text-align: center;
+}
+.commentdiv{
+    background-color: #ffffff;
+    padding: 40px;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+.leadi{
+    border-bottom: 0.1px solid #e5e5e5;
+}
+.leadi span{
+    border-bottom: 2px solid #000000;
+    font-size: 28px;
+    padding-bottom: 3px;
+}
+.addcomment{
+    cursor: pointer;
+    background: transparent;
+    border: 0.8px solid #6e7e85;
+    width: 120px;
+    padding: 7px;
+    border-radius: 20px;
+    transition: 0.4s all ease-in-out; 
+}
+button.addcomment:hover{
+    border: 0.8px solid #272727;
+    transform: scale(1.1)
+}
+.bottom{
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.bottom button a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 1000px){
+    .blog-post{
+        border-radius: 10px;
+        display: inline-block;
+        width: 100%;
+        box-shadow: 0 2px 30px 0 rgba(68, 68, 68, .5);
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .identity{
+        padding: 1rem;
+    }
+    .identity .sub-image{
+        display: block;
+        display: block;
+        float: left;
+        height: 80px;
+        width: 80px;
+        margin-top: 20px;
+        padding: 5px;
+    }
+    
+    .identity .sub{
+        display: block;
+        float: left;
+        padding-top: 35px;
+        margin-top: 20px;
+        margin-left: 70px;
+        margin-bottom: 25px;
+    }
+    
+    .identity .sub p{
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+    
+.identity .sub-image img{
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+img.lead{
+    display: block;
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+}
+
+.formy{
+    float: center;
+    margin: auto;
+    padding: 10px;
+    object-fit: cover;
+}
+.container{
+    margin: auto;
+    width: 100%;
+    padding: 0;
+    
+}
+
+
+
+}
+
+
+@media(max-width: 768px){
+    .image-head{
+        display: inline-block;
+        width: 100%;
+        padding: 0;
+    }
+    .head-tag{
+        padding: 10px;
+        padding: 0;
+    }
+    .post-open{
+        padding: 7px;
+    }
+    .image-head img{
+        height: 40vh;
+    }
+    .blog-body{
+        padding: 0;
+        padding-top: 40px;
+        text-align: center;
+    }
+    
+}

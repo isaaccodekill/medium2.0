@@ -1,0 +1,100 @@
+<% include partials/header %>
+
+
+
+
+<div class="post-open">
+    <div class="head-tag">
+            <div class="identity">
+                    <div class="sub-image">
+                            <img  src="https://images.pexels.com/users/avatars/26735/lisa-fotios-223.jpeg?w=60&h=60&fit=crop&crop=faces">
+                    </div>
+                    <div class="sub"><p><%= blog.author.username %></p><p><%= blog.createdAtWords %></p></div> 
+            </div>
+            <div class="blog-title">
+                <h1><%- blog.title %></h1>
+            </div>
+            <div class="image-head">
+                <img src="<%= blog.image %>" alt="">
+            </div>     
+    </div>
+    <div class="blog-body">
+        <p><%- blog.body %></p>
+    </div>
+    <% if(user && blog.author.id.equals(user._id)){ %>
+        <div class="bottom">
+        <div class="edit">
+                <button class="large ui left floated  button"><a href="/blogs/<%= blog._id %>/edit">Edit Post</a></button>       
+        </div>
+        <div class="delete">
+            <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                <button class="large ui right floated red button">Delete</button>
+            </form>
+        </div>
+    </div>
+   <% } %>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-lg-10 commentdiv">  
+                <div class="leadi">
+                    <a class="active item">
+                    <span class="blac"> <strong> Discussion</strong></span>  
+                    </a>
+                    <a href="#comments" id="commentjs" ><button id="replybutton" class="addcomment float-right">
+                            <i class="fas fa-plus fa-sm"></i>
+                            Reply
+                    </button></a>
+                  </div>
+                  <form class="ui reply form formy commentse"  id="comments" style="margin-top: 30px; margin-bottom: 10px;" action="/blogs/<%= blog._id %>/comments" method="POST">
+                        <div class="field">
+                            <p><strong>You</strong> <i class="fas fa-arrow-right"></i> <strong> <%= blog.author.username %> </strong></p>
+                          <textarea name="comment"></textarea>
+                        </div>
+                        <button  type="submit" class="ui blue labeled submit icon button float-right">
+                             <i class="icon edit"></i> Add Reply
+                        </button>
+                      </form>
+          
+                        <div class="ui comments">
+                            <% blog.comments.forEach(comment => { %>
+                                <div class="comment" id="replace">
+                                  <a class="avatar">
+                                    <img src="/images/avatar/small/joe.jpg">
+                                  </a>
+                                  <div class="content">
+                                    <a ><strong><%= comment.author.username %></strong> </a>
+                                    <a class="float-right"><strong><%= comment.createdAt %></strong></a>
+                                    <div class="text">
+                                      <%= comment.content %>
+                                    </div>
+                                    <div class="actions">
+                                      <a class="reply">Reply</a>
+                                      <% if(user && comment.author.id.equals(user.id)){ %>
+                                        <form style="display: inline;" action="/blogs/<%= blog._id %>/comments/<%= comment._id %>/delete?_method=DELETE" method="POST">
+                                            <a class="reply"><button class="reply delbutt" type="submit">Delete</button></a> 
+                                         </form>
+                                     <% } %>
+                                    </div>
+                                  </div>
+                                </div>
+                            <% }) %>
+                                
+                        </div>
+            
+                            
+            
+            
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer %>
